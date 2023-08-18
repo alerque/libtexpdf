@@ -230,6 +230,7 @@ texpdf_set_compression (int level)
 }
 
 static unsigned pdf_version = PDF_VERSION_DEFAULT;
+static unsigned pdf_max_version = PDF_VERSION_MAX;
 
 void
 texpdf_set_version (unsigned version)
@@ -3296,7 +3297,7 @@ texpdf_check_for_pdf (FILE *file)
   if (version < 0)  /* not a PDF file */
     return 0;
 
-  if (version <= pdf_version)
+  if (version <= pdf_max_version)
     return 1;
 
   WARN("Version of PDF file (1.%d) is newer than version limit specification.",
