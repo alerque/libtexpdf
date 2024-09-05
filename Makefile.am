@@ -2,6 +2,9 @@ ACLOCAL_AMFLAGS = -I build-aux
 
 AM_CPPFLAGS =  $(LIBPNG_INCLUDES) $(ZLIB_INCLUDES) $(LIBPAPER_INCLUDES)
 
+licensedir = $(datarootdir)/licenses/$(PACKAGE_NAME)
+dist_license_DATA = LICENSE
+
 lib_LTLIBRARIES = libtexpdf.la
 
 libtexpdf_la_CPPFLAGS = -DXETEX -DBUILDING_LIBTEXPDF $(AM_CPPFLAGS)
